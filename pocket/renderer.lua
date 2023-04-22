@@ -2,8 +2,8 @@
 -- Graphics Rendering Control
 --
 
-local panel_view = require("reactor-plc.panel.front_panel")
-local style      = require("reactor-plc.panel.style")
+local main_view  = require("pocket.ui.main")
+local style      = require("pocket.ui.style")
 
 local flasher    = require("graphics.flasher")
 
@@ -15,10 +15,10 @@ local ui = {
     display = nil
 }
 
--- start the UI
+-- start the pocket GUI
 function renderer.start_ui()
     if ui.display == nil then
-        -- reset terminal
+        -- reset screen
         term.setTextColor(colors.white)
         term.setBackgroundColor(colors.black)
         term.clear()
@@ -31,7 +31,7 @@ function renderer.start_ui()
 
         -- init front panel view
         ui.display = DisplayBox{window=term.current(),fg_bg=style.root}
-        panel_view(ui.display)
+        main_view(ui.display)
 
         -- start flasher callback task
         flasher.run()

@@ -2,8 +2,8 @@
 -- Graphics Rendering Control
 --
 
-local panel_view = require("reactor-plc.panel.front_panel")
-local style      = require("reactor-plc.panel.style")
+local panel_view = require("rtu.panel.front_panel")
+local style      = require("rtu.panel.style")
 
 local flasher    = require("graphics.flasher")
 
@@ -16,7 +16,8 @@ local ui = {
 }
 
 -- start the UI
-function renderer.start_ui()
+---@param units table RTU units
+function renderer.start_ui(units)
     if ui.display == nil then
         -- reset terminal
         term.setTextColor(colors.white)
@@ -29,12 +30,12 @@ function renderer.start_ui()
             term.setPaletteColor(style.colors[i].c, style.colors[i].hex)
         end
 
-        -- init front panel view
-        ui.display = DisplayBox{window=term.current(),fg_bg=style.root}
-        panel_view(ui.display)
-
         -- start flasher callback task
         flasher.run()
+
+        -- init front panel view
+        ui.display = DisplayBox{window=term.current(),fg_bg=style.root}
+        panel_view(ui.display, units)
     end
 end
 
