@@ -13,7 +13,7 @@ config.SV_TIMEOUT = 5
 config.API_TIMEOUT = 5
 
 -- expected number of reactor units, used only to require that number of unit monitors
-config.NUM_UNITS = 4
+config.NUM_UNITS = 1
 
 -- alarm sounder volume (0.0 to 3.0, 1.0 being standard max volume, this is the option given to to speaker.play())
 -- note: alarm sine waves are at half saturation, so that multiple will be required to reach full scale
