@@ -13,7 +13,7 @@ config.CRD_TIMEOUT = 5
 config.PKT_TIMEOUT = 5
 
 -- expected number of reactors
-config.NUM_REACTORS = 4
+config.NUM_REACTORS = 1
 -- expected number of boilers/turbines for each reactor
 config.REACTOR_COOLING = {
     { BOILERS = 1, TURBINES = 1 },  -- reactor unit 1
