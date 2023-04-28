@@ -17,9 +17,6 @@ config.NUM_REACTORS = 1
 -- expected number of boilers/turbines for each reactor
 config.REACTOR_COOLING = {
     { BOILERS = 1, TURBINES = 1 },  -- reactor unit 1
-    { BOILERS = 1, TURBINES = 1 },  -- reactor unit 2
-    { BOILERS = 1, TURBINES = 1 },  -- reactor unit 3
-    { BOILERS = 1, TURBINES = 1 }   -- reactor unit 4
 }
 
 -- log path
